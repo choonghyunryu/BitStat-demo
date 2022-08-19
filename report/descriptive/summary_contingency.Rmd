@@ -23,7 +23,7 @@ plot_flag <- $plot_flag$
 
 ```{r title-summary-category, echo=FALSE, message=FALSE, warning=FALSE, results='asis'}
 htmltools::h3(
-  BitStat::translate("범주형 변수 분할표")
+  translate("범주형 변수 분할표")
 )
 ```
 
@@ -134,7 +134,7 @@ if (plot_flag) {
   htmltools::br()
   
   htmltools::h3(
-    BitStat::translate("범주형 변수 플롯")
+    translate("범주형 변수 플롯")
   )
 }
 ```

@@ -33,37 +33,38 @@ library(reactable)
 library(glue)
 library(dlookr)
 library(openxlsx)
-
-library(BitStat)
+library(ggridges)  # for shinyio environments
 
 ##==============================================================================
 ## 01.02. Loading Sources
 ##==============================================================================
-#source("html_css.R")
+source("R/data.R")
+source("R/display.R")
+source("R/html_css.R")
+source("R/html_tag.R")
+source("R/translation.R")
 
+.BitStatEnv <- new.env()
+assign("language", "kr", envir = .BitStatEnv)
 
-# .BitStatEnv <- new.env()
-# assign("language", "kr", envir = .BitStatEnv)
-# 
-# trans_file <- "translation.csv"
-# trans_csv <- file.path(system.file(package = "BitStat"), 
-#                        "translation", trans_file)
-# 
-# translation <- readr::read_csv(
-#   trans_csv, 
-#   comment = "#",
-#   col_types = "cc",
-#   locale = readr::locale(encoding = "UTF-8")
-# ) %>% 
-#   suppressWarnings()
-# 
-# if (max(table(translation$kr)) > 1) {
-#   message("translate meta file is invalied")
-# }
-# 
-# assign("translation", translation, envir = .BitStatEnv)
-# 
-# assign(".BitStatEnv", .BitStatEnv, envir = .GlobalEnv)
+trans_file <- "translation.csv"
+trans_csv <- file.path(glue::glue("translation/{trans_file}"))
+
+translation <- readr::read_csv(
+  trans_csv,
+  comment = "#",
+  col_types = "cc",
+  locale = readr::locale(encoding = "UTF-8")
+) %>%
+  suppressWarnings()
+
+if (max(table(translation$kr)) > 1) {
+  message("translate meta file is invalied")
+}
+
+assign("translation", translation, envir = .BitStatEnv)
+
+assign(".BitStatEnv", .BitStatEnv, envir = .GlobalEnv)
 
 
 

@@ -14,8 +14,7 @@ create_summary_numeric <- function(id_dataset, variables = NULL,
   target_rmd <- glue::glue("{output_dir}/{output_file}.Rmd")
   target_html <- glue::glue("{output_dir}/{output_file}.html")
   
-  rmd_file <- file.path(system.file(package = "BitStat"), 
-                        "app", "report", "descriptive", source_rmd)
+  rmd_file <- file.path(glue::glue("report/descriptive/{source_rmd}"))
   flag <- file.copy(from = rmd_file, to = target_rmd)
   
   variables <- variables %>% 
@@ -100,8 +99,7 @@ create_summary_category <- function(id_dataset, variables = NULL,
   target_rmd <- glue::glue("{output_dir}/{output_file}.Rmd")
   target_html <- glue::glue("{output_dir}/{output_file}.html")
   
-  rmd_file <- file.path(system.file(package = "BitStat"), 
-                        "app", "report", "descriptive", source_rmd)
+  rmd_file <- file.path(glue::glue("report/descriptive/{source_rmd}"))
   flag <- file.copy(from = rmd_file, to = target_rmd)
   
   variables <- variables %>% 
@@ -156,8 +154,7 @@ create_summary_contingency <- function(id_dataset,
   target_rmd <- glue::glue("{output_dir}/{output_file}.Rmd")
   target_html <- glue::glue("{output_dir}/{output_file}.html")
   
-  rmd_file <- file.path(system.file(package = "BitStat"), 
-                        "app", "report", "descriptive", source_rmd)
+  rmd_file <- file.path(glue::glue("report/descriptive/{source_rmd}"))
   flag <- file.copy(from = rmd_file, to = target_rmd)
   
   #--Store parameters ----------------------------------------------------------  
@@ -228,8 +225,7 @@ create_mat_corr <- function(id_dataset, variables = NULL,
   target_rmd <- glue::glue("{output_dir}/{output_file}.Rmd")
   target_html <- glue::glue("{output_dir}/{output_file}.html")
   
-  rmd_file <- file.path(system.file(package = "BitStat"), 
-                        "app", "report", "descriptive", source_rmd)
+  rmd_file <- file.path(glue::glue("report/descriptive/{source_rmd}"))
   flag <- file.copy(from = rmd_file, to = target_rmd)
   
   variables <- variables %>% 
@@ -307,8 +303,7 @@ create_mat_test <- function(id_dataset, variables = NULL,
   target_rmd <- glue::glue("{output_dir}/{output_file}.Rmd")
   target_html <- glue::glue("{output_dir}/{output_file}.html")
   
-  rmd_file <- file.path(system.file(package = "BitStat"), 
-                        "app", "report", "descriptive", source_rmd)
+  rmd_file <- file.path(glue::glue("report/descriptive/{source_rmd}"))
   flag <- file.copy(from = rmd_file, to = target_rmd)
   
   variables <- variables %>% 

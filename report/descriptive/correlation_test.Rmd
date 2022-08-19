@@ -24,7 +24,7 @@ plot_flag <- $plot_flag$
 
 ```{r title-matrix, echo=FALSE, message=FALSE, warning=FALSE, results='asis'}
 htmltools::h3(
-  BitStat::translate("상관검정")
+  translate("상관검정")
 )
 ```
 
@@ -86,7 +86,7 @@ if (!group_flag) {
                    alternative = alternative) %>% 
             asis_cor_test(),
           error = function(e) {
-            message <- BitStat::translate(e$message, msg_language = "en")
+            message <- translate(e$message, msg_language = "en")
             htmltools::h5(message, style = "color:#FF5733;") %>% 
               as.character() %>% 
               cat()
@@ -103,7 +103,7 @@ if (!group_flag) {
 ```{r title-plot, echo=FALSE, message=FALSE, warning=FALSE, results='asis'}
 if (plot_flag) {
   htmltools::h3(
-    BitStat::translate("상관관계 플롯")
+    translate("상관관계 플롯")
   )
 }
 ```

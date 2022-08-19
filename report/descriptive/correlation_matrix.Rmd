@@ -23,7 +23,7 @@ plot_flag <- $plot_flag$
 
 ```{r title-matrix, echo=FALSE, message=FALSE, warning=FALSE, results='asis'}
 htmltools::h3(
-  BitStat::translate("상관행렬")
+  translate("상관행렬")
 )
 ```
 
@@ -117,7 +117,7 @@ if (!group_flag) {
 ```{r title-plot, echo=FALSE, message=FALSE, warning=FALSE, results='asis'}
 if (plot_flag) {
   htmltools::h3(
-    BitStat::translate("상관행렬 플롯")
+    translate("상관행렬 플롯")
   )
 }
 ```
