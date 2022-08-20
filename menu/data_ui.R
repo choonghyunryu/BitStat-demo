@@ -960,7 +960,8 @@ observeEvent(input$printDiagnose, {
         theme = theme,
         author = author,
         output_file = output_file,
-        base_family = "NanumSquare"
+        base_family = "NanumSquare",
+        extra_args = c("--disable-gpu", "--no-sandbox")
       )
   } else {
     dslists()[[id_dataset]]$dataset %>%
